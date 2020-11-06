@@ -562,7 +562,7 @@ public:
     }
 	
 	void saveAllChains() {
-		ofstream _("_");
+        ofstream _("_");
         ofstream chainsk2m1File(filename + "/allChainsk2m1.txt");
         ofstream chainsk3m1File(filename + "/allChainsk3m1.txt");
         ofstream chainsk2m2File(filename + "/allChainsk2m2.txt");
@@ -570,34 +570,32 @@ public:
         ofstream chainsk2m3File(filename + "/allChainsk2m3.txt");
         ofstream chainsk3m3File(filename + "/allChainsk3m3.txt");
 		
-		LOG(chainsk2m1File.is_open());
-		LOG(chainsk3m1File.is_open());
-		LOG(chainsk2m2File.is_open());
-		LOG(chainsk3m2File.is_open());
-		LOG(chainsk2m3File.is_open());
-		LOG(chainsk3m3File.is_open());
-		
-//		LOG(mols);
-		
+        LOG(chainsk2m1File.is_open());
+        LOG(chainsk3m1File.is_open());
+        LOG(chainsk2m2File.is_open());
+        LOG(chainsk3m2File.is_open());
+        LOG(chainsk2m3File.is_open());
+        LOG(chainsk3m3File.is_open());
+
   //      try{
-		chainsk2m1File << allChainsk2m1;
-		chainsk3m1File << allChainsk3m1;
-		chainsk2m2File << allChainsk2m2;
-		chainsk3m2File << allChainsk3m2;
-		chainsk2m3File << allChainsk2m3;
-		chainsk3m3File << allChainsk3m3;
-		
-		chainsk2m1File.close();
-		chainsk3m1File.close();
-		chainsk2m2File.close();
-		chainsk3m2File.close();
-		chainsk2m3File.close();
-		chainsk3m3File.close();
+        chainsk2m1File << allChainsk2m1;
+        chainsk3m1File << allChainsk3m1;
+        chainsk2m2File << allChainsk2m2;
+        chainsk3m2File << allChainsk3m2;
+        chainsk2m3File << allChainsk2m3;
+        chainsk3m3File << allChainsk3m3;
+
+        chainsk2m1File.close();
+        chainsk3m1File.close();
+        chainsk2m2File.close();
+        chainsk3m2File.close();
+        chainsk2m3File.close();
+        chainsk3m3File.close();
 
     }
     
     void saveMolChains() {
-		ofstream _("_");
+        ofstream _("_");
         ofstream chainsk2m1File(filename + "/molVertChainsk2m1.txt");
         ofstream chainsk3m1File(filename + "/molVertChainsk3m1.txt");
         ofstream chainsk2m2File(filename + "/molVertChainsk2m2.txt");
@@ -605,35 +603,42 @@ public:
         ofstream chainsk2m3File(filename + "/molVertChainsk2m3.txt");
         ofstream chainsk3m3File(filename + "/molVertChainsk3m3.txt");
 		
-		LOG(chainsk2m1File.is_open());
-		LOG(chainsk3m1File.is_open());
-		LOG(chainsk2m2File.is_open());
-		LOG(chainsk3m2File.is_open());
-		LOG(chainsk2m3File.is_open());
-		LOG(chainsk3m3File.is_open());
+        LOG(chainsk2m1File.is_open());
+        LOG(chainsk3m1File.is_open());
+        LOG(chainsk2m2File.is_open());
+        LOG(chainsk3m2File.is_open());
+        LOG(chainsk2m3File.is_open());
+        LOG(chainsk3m3File.is_open());
         
-		//LOG(mols);
-		LOG(mols.size());
+        //LOG(mols);
+        //LOG(mols.size());
         
-		for (Molecule mol : mols) {
-        	chainsk2m1File << mol.name << ":\n";
-	        chainsk3m1File << mol.name << ":\n";
-	        chainsk2m2File << mol.name << ":\n";
-	        chainsk3m2File << mol.name << ":\n";
-	        chainsk2m3File << mol.name << ":\n";
-	        chainsk3m3File << mol.name << ":\n";
-	        
-	        markerCount = 1; writeMapVert(chainsk2m1File, mol.createList(2));
-	        markerCount = 1; writeMapVert(chainsk3m1File, mol.createList(3));
-	        markerCount = 2; writeMapVert(chainsk2m2File, mol.createList(2));
-	        markerCount = 2; writeMapVert(chainsk3m2File, mol.createList(3));
-	        markerCount = 3; writeMapVert(chainsk2m3File, mol.createList(2));
-	        markerCount = 3; writeMapVert(chainsk3m3File, mol.createList(3));
+        for (Molecule mol : mols) {
+            chainsk2m1File << mol.name << ":\n";
+            chainsk3m1File << mol.name << ":\n";
+            chainsk2m2File << mol.name << ":\n";
+            chainsk3m2File << mol.name << ":\n";
+            chainsk2m3File << mol.name << ":\n";
+            chainsk3m3File << mol.name << ":\n";
+
+            markerCount = 1; writeMapVert(chainsk2m1File, mol.createList(2));
+            markerCount = 1; writeMapVert(chainsk3m1File, mol.createList(3));
+            markerCount = 2; writeMapVert(chainsk2m2File, mol.createList(2));
+            markerCount = 2; writeMapVert(chainsk3m2File, mol.createList(3));
+            markerCount = 3; writeMapVert(chainsk2m3File, mol.createList(2));
+            markerCount = 3; writeMapVert(chainsk3m3File, mol.createList(3));
         }
+        chainsk2m1File.close();
+        chainsk3m1File.close();
+        chainsk2m2File.close();
+        chainsk3m2File.close();
+        chainsk2m3File.close();
+        chainsk3m3File.close();
+
     }
     
     void saveMatrices() {
-		ofstream _("_");
+        ofstream _("_");
         ofstream matrk2m1File(filename + "/matrk2m1.txt");
         ofstream matrk3m1File(filename + "/matrk3m1.txt");
         ofstream matrk2m2File(filename + "/matrk2m2.txt");
@@ -641,12 +646,12 @@ public:
         ofstream matrk2m3File(filename + "/matrk2m3.txt");
         ofstream matrk3m3File(filename + "/matrk3m3.txt");
 		
-		LOG(matrk2m1File.is_open());
-		LOG(matrk3m1File.is_open());
-		LOG(matrk2m2File.is_open());
-		LOG(matrk3m2File.is_open());
-		LOG(matrk2m3File.is_open());
-		LOG(matrk3m3File.is_open());
+        LOG(matrk2m1File.is_open());
+        LOG(matrk3m1File.is_open());
+        LOG(matrk2m2File.is_open());
+        LOG(matrk3m2File.is_open());
+        LOG(matrk2m3File.is_open());
+        LOG(matrk3m3File.is_open());
         
         markerCount = 1; loadTableToFile(mols, 2, matrk2m1File); matrk2m1File << "\n";
         markerCount = 1; loadTableToFile(mols, 3, matrk3m1File); matrk3m1File << "\n";
@@ -654,18 +659,25 @@ public:
         markerCount = 2; loadTableToFile(mols, 3, matrk3m2File); matrk3m2File << "\n";
         markerCount = 3; loadTableToFile(mols, 2, matrk2m3File); matrk2m3File << "\n";
         markerCount = 3; loadTableToFile(mols, 3, matrk3m3File); matrk3m3File << "\n";
+
+        matrk2m1File.close();
+        matrk3m1File.close();
+        matrk2m2File.close();
+        matrk3m2File.close();
+        matrk2m3File.close();
+        matrk3m3File.close();
     }
     
     void save(){
         system((string("mkdir ") + filename).c_str());
         saveAllChains();
-        //saveMolChains();
-        //saveMatrices();
+        saveMolChains();
+        saveMatrices();
     }
 };
 
 int main() {
-    MolFiles molFiles("GLASS.sdf");
+    MolFiles molFiles("er_lit_3d/er_lit_3d.sdf");
     molFiles.save();
     
     return 0;
